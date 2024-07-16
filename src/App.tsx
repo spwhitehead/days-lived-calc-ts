@@ -1,8 +1,16 @@
 import './App.css'
+import Calculator from './Components/Calculator'
 
 function App() {
   return (
     <>
+      <header>
+        <h1>Age in Days Calculator</h1>
+        <p>This app takes in how old someone is, then displays the approximate number of days they have been alive.</p>
+      </header>
+      <main>
+        <Calculator />
+      </main>
     </>
   )
 }
