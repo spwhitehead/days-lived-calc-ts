@@ -4,3 +4,12 @@
   padding: 2rem;
   text-align: center;
 }
+
+* {
+  text-align: center;
+}
+
+.main {
+  display: grid;
+  text-align: center;
+}

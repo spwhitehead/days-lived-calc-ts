@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import styles from "./Calculator.module.css"
 
 const Calculator: React.FC = () => {
     const [name, setName] = useState("");
@@ -21,14 +22,15 @@ const Calculator: React.FC = () => {
     
     return (
         <>
-        <form className="calculatorForm" action="submit" onSubmit={handleSubmit}>
-            <div>
+        <div className={styles.container}>
+        <form className={styles.calculatorForm} action="submit" onSubmit={handleSubmit}>
+            <div className={styles.formElement}>
                 <label htmlFor="name">Name</label>
                 <input
                     type="text"
                     id="name"
                     value={name}
-                    placeholder="Sebastian Olivera"
+                    placeholder="Sebastian"
                     onChange={(event: React.ChangeEvent<HTMLInputElement>): void => setName(event.target.value)}/>
 
                 <label htmlFor="ageInYears">Age</label>
@@ -42,10 +44,11 @@ const Calculator: React.FC = () => {
             <button type="submit">Submit</button>
         </form>
         {submittedName && submittedAge !== null &&(
-            <div>
+            <div className={styles.result}>
                 <p>{submittedName} is {daysLived} days old!</p>
             </div>
         )}
+        </div>
         </>
     );
 }
